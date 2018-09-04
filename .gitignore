@@ -1,5 +1,8 @@
 # Bad babby
-*.so *.exe *.dll
+*.so
+*.exe
+*.dll
+*.pck
 .build/
 
 # Godot-specific ignores
