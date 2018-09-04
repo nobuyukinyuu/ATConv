@@ -1,0 +1,17 @@
+[gd_resource type="GradientTexture" load_steps=2 format=2]
+
+[sub_resource type="Gradient" id=1]
+
+resource_local_to_scene = true
+offsets = PoolRealArray( 0, 0.333, 0.667, 1 )
+colors = PoolColorArray( 0.078125, 0, 0.065918, 1, 0.0309449, 0, 0.304688, 1, 0, 0.247192, 0.632813, 1, 0, 1, 0.976563, 1 )
+_sections_unfolded = [ "Resource" ]
+
+[resource]
+
+resource_local_to_scene = true
+flags = 4
+gradient = SubResource( 1 )
+width = 4
+_sections_unfolded = [ "Resource" ]
+

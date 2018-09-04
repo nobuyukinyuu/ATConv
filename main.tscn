@@ -1,0 +1,662 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://main.gd" type="Script" id=1]
+[ext_resource path="res://BigSubtilePreview.gd" type="Script" id=2]
+[ext_resource path="res://Line2D.gd" type="Script" id=3]
+[ext_resource path="res://Panel.gd" type="Script" id=4]
+[ext_resource path="res://Futura.tres" type="DynamicFont" id=5]
+[ext_resource path="res://template12.png" type="Texture" id=6]
+[ext_resource path="res://Tex12.gd" type="Script" id=7]
+[ext_resource path="res://32x32grid.png" type="Texture" id=8]
+[ext_resource path="res://template47.png" type="Texture" id=9]
+[ext_resource path="res://io.gd" type="Script" id=10]
+
+[sub_resource type="DynamicFontData" id=1]
+
+hinting = 2
+font_path = "res://FuturaLT.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+
+size = 32
+use_mipmaps = false
+use_filter = false
+font_data = SubResource( 1 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="ViewportTexture" id=3]
+
+resource_local_to_scene = true
+flags = 0
+viewport_path = NodePath("Viewport")
+
+[sub_resource type="DynamicFontData" id=4]
+
+hinting = 2
+font_path = "res://FuturaLT.ttf"
+
+[sub_resource type="DynamicFont" id=5]
+
+size = 16
+use_mipmaps = false
+use_filter = false
+font_data = SubResource( 4 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="Theme" id=6]
+
+default_font = SubResource( 5 )
+FileDialog/colors/files_disabled = Color( 0, 0, 0, 0.7 )
+FileDialog/icons/folder = null
+FileDialog/icons/parent_folder = null
+FileDialog/icons/reload = null
+
+[node name="Node2D" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="PreviewPanel" type="Panel" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 752.0
+margin_top = 304.0
+margin_right = 1008.0
+margin_bottom = 560.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="Preview" type="TextureRect" parent="PreviewPanel" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 256.0
+margin_bottom = 256.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+expand = true
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Grid" type="GridContainer" parent="PreviewPanel/Preview" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+columns = 2
+
+[node name="0" type="TextureRect" parent="PreviewPanel/Preview/Grid" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 128.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 128, 128 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+expand = true
+stretch_mode = 0
+script = ExtResource( 2 )
+_sections_unfolded = [ "Rect" ]
+
+[node name="1" type="TextureRect" parent="PreviewPanel/Preview/Grid" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 132.0
+margin_right = 260.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 128, 128 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+expand = true
+stretch_mode = 0
+script = ExtResource( 2 )
+_sections_unfolded = [ "Rect" ]
+
+[node name="2" type="TextureRect" parent="PreviewPanel/Preview/Grid" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 132.0
+margin_right = 128.0
+margin_bottom = 260.0
+rect_min_size = Vector2( 128, 128 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+expand = true
+stretch_mode = 0
+script = ExtResource( 2 )
+_sections_unfolded = [ "Rect" ]
+
+[node name="3" type="TextureRect" parent="PreviewPanel/Preview/Grid" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 132.0
+margin_top = 132.0
+margin_right = 260.0
+margin_bottom = 260.0
+rect_min_size = Vector2( 128, 128 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+expand = true
+stretch_mode = 0
+script = ExtResource( 2 )
+_sections_unfolded = [ "Rect" ]
+
+[node name="Line2D" type="Line2D" parent="PreviewPanel/Preview" index="1"]
+
+points = PoolVector2Array( 0, 0, 64, 64, 0, 0, 112, 176 )
+width = 1.0
+default_color = Color( 1, 1, 1, 0.530392 )
+texture_mode = 1089819989
+sharp_limit = 2.0
+round_precision = 8
+script = ExtResource( 3 )
+
+[node name="Panel" type="Panel" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 224.0
+margin_top = 16.0
+margin_right = 1008.0
+margin_bottom = 288.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 4 )
+_sections_unfolded = [ "Rect" ]
+
+[node name="lblSubtiles" type="Label" parent="." index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 32.0
+margin_top = 112.0
+margin_right = 128.0
+margin_bottom = 256.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 5 )
+text = "UL:
+UR:
+LL:
+LR:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="lblTile" type="Label" parent="." index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 160.0
+margin_bottom = 64.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 2 )
+text = "Tile 36"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="btnClear" type="Button" parent="." index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 16.0
+margin_top = 256.0
+margin_right = 80.0
+margin_bottom = 288.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Clear"
+flat = false
+align = 1
+
+[node name="btnSet" type="Button" parent="." index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 96.0
+margin_top = 256.0
+margin_right = 160.0
+margin_bottom = 288.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Set"
+flat = false
+align = 1
+
+[node name="Panel12" type="Panel" parent="." index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 544.0
+margin_top = 304.0
+margin_right = 736.0
+margin_bottom = 560.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Material" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Tex" type="TextureRect" parent="Panel12" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 192.0
+margin_bottom = 256.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 6 )
+expand = true
+stretch_mode = 0
+script = ExtResource( 7 )
+_sections_unfolded = [ "Material", "Rect" ]
+
+[node name="Grid" type="TextureRect" parent="Panel12" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 8 )
+stretch_mode = 2
+
+[node name="icon" type="Sprite" parent="." index="7"]
+
+position = Vector2( 144, 16 )
+centered = false
+_sections_unfolded = [ "Offset" ]
+
+[node name="Viewport" type="Viewport" parent="." index="8"]
+
+arvr = false
+size = Vector2( 192, 64 )
+own_world = true
+world = null
+transparent_bg = true
+msaa = 0
+hdr = false
+disable_3d = true
+usage = 0
+debug_draw = 0
+render_target_v_flip = true
+render_target_clear_mode = 0
+render_target_update_mode = 2
+audio_listener_enable_2d = false
+audio_listener_enable_3d = false
+physics_object_picking = false
+gui_disable_input = false
+gui_snap_controls_to_pixels = true
+shadow_atlas_size = 0
+shadow_atlas_quad_0 = 2
+shadow_atlas_quad_1 = 2
+shadow_atlas_quad_2 = 3
+shadow_atlas_quad_3 = 4
+_sections_unfolded = [ "Render Target", "Rendering" ]
+
+[node name="Underlay" type="TextureRect" parent="Viewport" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 192.0
+margin_bottom = 64.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 9 )
+expand = true
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Overlay" type="TextureRect" parent="Viewport" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+expand = true
+stretch_mode = 0
+_sections_unfolded = [ "Anchor", "Rect" ]
+
+[node name="OutputPanel" type="Sprite" parent="." index="9"]
+
+position = Vector2( 272, 400 )
+scale = Vector2( 2.66667, 2.66667 )
+texture = SubResource( 3 )
+
+[node name="btnOutputAutofill" type="Button" parent="." index="10"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 16.0
+margin_top = 512.0
+margin_right = 144.0
+margin_bottom = 550.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Output AF"
+flat = false
+align = 1
+
+[node name="btnAutofill" type="Button" parent="." index="11"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 160.0
+margin_top = 512.0
+margin_right = 288.0
+margin_bottom = 550.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Autofill"
+flat = false
+align = 1
+
+[node name="btnLoad" type="Button" parent="." index="12"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 320.0
+margin_top = 512.0
+margin_right = 417.0
+margin_bottom = 550.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Load 12"
+flat = false
+align = 1
+script = ExtResource( 10 )
+
+[node name="FileDialog" type="FileDialog" parent="btnLoad" index="0"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -320.0
+margin_top = 112.0
+margin_right = 400.0
+margin_bottom = 480.0
+rect_min_size = Vector2( 200, 70 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = SubResource( 6 )
+popup_exclusive = true
+window_title = "Open a File"
+resizable = false
+dialog_hide_on_ok = false
+mode_overrides_title = true
+mode = 0
+access = 2
+filters = PoolStringArray(  )
+show_hidden_files = true
+current_dir = "C:/Users/Jim/Documents/ATConv"
+current_file = ""
+current_path = "C:/Users/Jim/Documents/ATConv/"
+_sections_unfolded = [ "Popup", "Theme" ]
+
+[node name="btnSave" type="Button" parent="." index="13"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 432.0
+margin_top = 512.0
+margin_right = 528.0
+margin_bottom = 550.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Save 47"
+flat = false
+align = 1
+script = ExtResource( 10 )
+
+[node name="FileDialog" type="FileDialog" parent="btnSave" index="0"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -432.0
+margin_top = 112.0
+margin_right = 288.0
+margin_bottom = 480.0
+rect_min_size = Vector2( 200, 70 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = SubResource( 6 )
+popup_exclusive = true
+window_title = "Save a File"
+resizable = false
+dialog_hide_on_ok = false
+mode_overrides_title = true
+mode = 4
+access = 2
+filters = PoolStringArray(  )
+show_hidden_files = true
+current_dir = "C:/Users/Jim/Documents/ATConv"
+current_file = ""
+current_path = "C:/Users/Jim/Documents/ATConv/"
+_sections_unfolded = [ "Popup", "Theme" ]
+
+[node name="dlgCrapInput" type="AcceptDialog" parent="." index="14"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = -96.0
+margin_right = 293.0
+margin_bottom = -2.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+popup_exclusive = false
+window_title = "Alert!"
+resizable = false
+dialog_text = "Input format not supported!"
+dialog_hide_on_ok = true
+_sections_unfolded = [ "Dialog", "Theme" ]
+
+[connection signal="pressed" from="btnClear" to="." method="_on_btnClear_pressed"]
+
+[connection signal="pressed" from="btnSet" to="." method="_on_btnSet_pressed"]
+
+[connection signal="pressed" from="btnOutputAutofill" to="." method="_on_btnOutputAutofill_pressed"]
+
+[connection signal="pressed" from="btnAutofill" to="." method="_on_btnAutofill_pressed"]
+
+[connection signal="pressed" from="btnLoad" to="btnLoad" method="_on_btnLoad_pressed"]
+
+[connection signal="file_selected" from="btnLoad/FileDialog" to="btnLoad" method="_on_LoadDialog_file_selected"]
+
+[connection signal="pressed" from="btnSave" to="btnSave" method="_on_btnSave_pressed"]
+
+[connection signal="file_selected" from="btnSave/FileDialog" to="btnSave" method="_on_SaveDialog_file_selected"]
+
+

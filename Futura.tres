@@ -1,0 +1,15 @@
+[gd_resource type="DynamicFont" load_steps=2 format=2]
+
+[sub_resource type="DynamicFontData" id=4]
+
+hinting = 2
+font_path = "res://FuturaLT.ttf"
+
+[resource]
+
+size = 24
+use_mipmaps = false
+use_filter = false
+font_data = SubResource( 4 )
+_sections_unfolded = [ "Font", "Settings" ]
+
